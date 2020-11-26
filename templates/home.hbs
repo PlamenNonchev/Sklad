@@ -1,0 +1,56 @@
+{{>header}}
+{{#unless username}}
+<div class="home d-md-flex flex-md-equal  my-md-3 pl-md-3">
+    <div style=" padding-left: 7%; padding-top:3%;" class="col-md-7">
+      <h2 class="featurette-heading">Warehouse manager</h2>
+      <p class="lead">Our number one priority is to help you organize and store the products in your shop as effiecently as possible</p>
+     
+    </div>
+    <div class="col-md-5">
+      <img class="home-picture" src="./images/Untitled.png" />
+    </div>
+  </div>
+  {{else}}
+  <form action="#/home" method="GET">
+        <label>Find product by name:</label>
+        <input type="text" name="search" placeholder="Enter product name..." value={{search}}>
+        <input type="submit" value="Search">
+      </form>
+    {{#unless products}}
+
+    <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="fouronefour">
+          <img class="no-found-picture" src="./images/no_product.png" />
+        </div>
+        <div class="no-found-template">
+          <h1>
+            There aren't any products, yet!</h1>
+            {{#if admin}}
+          <h2>
+            What do you have in mind?</h2>
+          <div class="no-found-details">
+            Add your first product!
+          </div>
+          <div class="actions">
+            <a href="#/create" class="btn btn-dark btn-lg">Create the first product? </a>
+          </div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div> 
+
+
+{{else}}
+
+  <div id="treks-list">
+    {{#each products}}
+    {{>product}}
+    {{/each}}
+    
+  </div>
+  {{/unless}}
+  {{/unless}}
+  {{>footer}}

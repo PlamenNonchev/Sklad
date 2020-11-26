@@ -1,0 +1,40 @@
+ {{>header}}
+ <form class="create-product" action="#/create" method="POST">
+    <div class="text-center mb-4">
+      <h1 class="h3 mb-3 font-weight-normal">Add a new product to the warehouse!</h1>
+      <p>Fill up the following information!</p>
+    </div>
+
+    <div class="form-label-group">
+      <label for="inputProductName">Product Name</label>
+      <input  type="text" name="name" class="form-control" placeholder="Name" required="" autofocus="">
+      
+    </div>
+
+    <div class="form-label-group">
+      <label for="inputProductPrice">Price</label>
+      <input type="text"  name="price" class="form-control" placeholder="Price" required="">
+      
+    </div>
+
+    <div class="form-label-group">
+      <label for="inputProductDetails">Details</label>
+      <textarea type="text"  name="details" class="form-control" placeholder="Details" required=""></textarea>
+      
+    </div>
+
+    <div class="form-label-group">
+      <label for="inputTrekImage">Image</label>
+      <input type="text"  name="imageURL" class="form-control" placeholder="Image" required="" autofocus="">
+      
+    </div>
+    
+    <div class="form-label-group">
+      <label for="inputTrekImage">Quantity</label>
+      <input type="text"  name="quantity" class="form-control" placeholder="Quantity" required="" autofocus="">
+      
+    </div>
+
+    <button class="btn btn-lg btn-dark btn-block" type="submit">Add Product</button>
+  </form>
+  {{>footer}}
